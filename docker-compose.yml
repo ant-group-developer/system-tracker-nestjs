@@ -1,0 +1,11 @@
+services:
+    app-prod:
+        image: stream-tracker/prod:${TAG:-latest}
+        build: .
+        ports:
+            - '${HOST_PORT:-7777}:${PORT:-7878}'
+        environment:
+            - TZ=${TZ:-Asia/Ho_Chi_Minh}
+        restart: unless-stopped
+        mem_limit: 2g
+        cpus: 2
