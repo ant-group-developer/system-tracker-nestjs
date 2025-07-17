@@ -7,3 +7,9 @@ services:
         environment:
             - TZ=${TZ:-Asia/Ho_Chi_Minh}
         restart: unless-stopped
+        pid: 'host'
+        security_opt:
+            - seccomp:unconfined
+        volumes:
+            - /proc:/proc:rw
+            - /sys:/sys:rw
