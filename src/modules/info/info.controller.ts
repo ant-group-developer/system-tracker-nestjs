@@ -7,11 +7,21 @@ export class InfoController {
 
 	@Get('core')
 	async getInfo() {
-		return this.infoService.getInfo();
+		return this.infoService.getInfoAndSend();
 	}
 
 	@Get('status')
 	async getStatus() {
-		return this.infoService.getStatus();
+		return this.infoService.getStatusAndSend();
+	}
+
+	@Get('docker')
+	async getDocker() {
+		return this.infoService.getDocker();
+	}
+
+	@Get('docker/all')
+	async getDockerAll() {
+		return this.infoService.getDockerAll();
 	}
 }

@@ -7,5 +7,3 @@ services:
         environment:
             - TZ=${TZ:-Asia/Ho_Chi_Minh}
         restart: unless-stopped
-        mem_limit: 2g
-        cpus: 2
